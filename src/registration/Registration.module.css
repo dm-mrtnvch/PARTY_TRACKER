@@ -1,0 +1,12 @@
+.wrap {
+
+    height: 100vh;
+    background-color: cadetblue;
+}
+
+.RegistrationContainer {
+    border: 3px solid red;
+    width: 60%;
+    height: 50%;
+    align-items: center;
+}
