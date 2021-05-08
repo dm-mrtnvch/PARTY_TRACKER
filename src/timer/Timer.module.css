@@ -16,7 +16,6 @@ body {
     color: white;
     width: 100vw;
     height: 100vh;
-
 }
 
 .timerContainer {
@@ -42,10 +41,12 @@ body {
 h2 {
     font-weight: 600;
     margin-bottom: 0.5em;
+
 }
 
 .timerContainer div:first-child p {
     color: pink;
+
 }
 
 .timerContainer div:last-child {
@@ -56,6 +57,7 @@ h2 {
     margin-top: 3em;
     padding: 3em;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 section p:first-child, .timerContainer div:last-child span {

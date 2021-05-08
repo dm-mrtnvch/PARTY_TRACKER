@@ -9,7 +9,6 @@ function Main() {
     const food = {
         meat: {
             chicken: 5,
-            notChicken: 6,
             fish: 8
         },
         frovoshi: {
@@ -22,7 +21,7 @@ function Main() {
             water: 41
         },
         bread: {
-            lavash: 582
+            loaf: 582
         },
         sauce: {
             ketchunes: 2
@@ -31,19 +30,63 @@ function Main() {
 
     return (
         <>
-            <Navigation/>
             <div className={styles.wrap}>
                 <div className={styles.mainContainer}>
                     <h2>FOOD STACK</h2>
                     <section className={styles.icons}>
-                        <i className="fas fa-drumstick-bite">{food.meat.chicken}</i>
-                        <i className="fas fa-fish"></i>
-                        <i className="fas fa-carrot"></i>
-                        <i className="fas fa-apple-alt"></i>
-                        <i className="fas fa-bread-slice"></i>
-                        <i className="fas fa-beer"></i>
-                        <i className="fas fa-wine-bottle"></i>
-                        <i className="fas fa-tint"></i>
+
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-drumstick-bite"></i>
+                            <span>{food.meat.chicken}</span>
+                            <span>kg</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-fish"></i>
+                            <span>{food.meat.fish}</span>
+                            <span>kg</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-carrot"></i>
+                            <span>{food.frovoshi.vegetables}</span>
+                            <span>kg</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-apple-alt"></i>
+                            <span>{food.frovoshi.fruits}</span>
+                            <span>kg</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-bread-slice"></i>
+                            <span>{food.bread.loaf}</span>
+                            <span>pc</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-beer"></i>
+                            <span>{food.drinks.beer}</span>
+                            <span>ltr</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-wine-bottle"></i>
+                            <span>{food.drinks.alcohol}</span>
+                            <span>ltr</span>
+                        </div>
+                        <div className={styles.eachIcon}>
+                            <i className="fas fa-tint"></i>
+                            <span>{food.drinks.beer}</span>
+                            <span>ltr</span>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
                     </section>
                 </div>
             </div>

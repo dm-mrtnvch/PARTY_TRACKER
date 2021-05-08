@@ -4,14 +4,15 @@ import Header from './header/Header';
 import Main from './main/Main';
 import Timer from './timer/Timer';
 import Registration from './registration/Registration';
+import Statistics from './statistics/Statistics';
 
 function App() {
     return (
         <>
-            <Main/>
             <Timer/>
+            <Main/>
+            <Statistics/>
             <Registration/>
-            Weather
 
         </>
     )
