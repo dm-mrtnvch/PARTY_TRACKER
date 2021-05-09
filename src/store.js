@@ -1,6 +1,6 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import {statisticsReducer} from './statistics/statistics-reducer';
-import { requestsReducer, requestsMiddleware } from './requests'
+import { requestsReducer, requestsMiddleware } from './requests';
 
 const rootReducer = combineReducers({
     requests: requestsReducer,

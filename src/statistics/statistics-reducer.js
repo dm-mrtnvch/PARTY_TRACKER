@@ -1,3 +1,4 @@
+import {success} from '@redux-requests/core';
 
 import {LOAD_STATISTICS} from './statistics-constants';
 
@@ -6,44 +7,12 @@ const initialState = {
     data: null
 };
 
-const data = {
-    labels: ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'],
-    datasets: [
-        {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-            ],
-            borderWidth: 1,
-        },
-    ],
-};
-
-
 export const statisticsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOAD_STATISTICS: {
+        case success(LOAD_STATISTICS): {
             return {
                 ...state,
-                data: {
-                    age: data,
-                    gender: data,
-                    level: data
-                }
+                data: action.response.data,
             }
         }
         default: {

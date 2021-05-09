@@ -6,7 +6,7 @@ import { createDriver } from '@redux-requests/axios';
 export const { requestsReducer, requestsMiddleware } = handleRequests({
     driver: createDriver(
         axios.create({
-            baseURL: 'https://jsonplaceholder.typicode.com',
+            baseURL: 'http://my-json-server.typicode.com/dm-mrtnvch/PARTY_TRACKER',
         }),
     ),
 });
