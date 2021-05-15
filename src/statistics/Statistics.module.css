@@ -1,0 +1,26 @@
+
+.wrap {
+    background-image: url("https://photowalls.space/web/wallpapers/hills-and-sunset-dark-sky/5120x2880.jpg");
+    background-size: cover;
+    display: block;
+    border: 3px solid darkmagenta;
+    color: white;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.statisticsContainer {
+    display: flex;
+    border: 3px solid green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+
+}
+
+.eachDoughnut {
+    padding: 20px;
+}
