@@ -1,32 +1,25 @@
-import React from 'react'
+import React, {useContext} from 'react';
 import styles from './Main.module.css'
 import Navigation from '../nav/Navigation';
+import {useCollectionData} from 'react-firebase-hooks/firestore';
+import {Context} from '../index';
+import {sumBy} from 'lodash';
+import FoodForm from '../food-form/FoodForm';
 
 
 function Main() {
 
 
-    const food = {
-        meat: {
-            chicken: 5,
-            fish: 8
-        },
-        frovoshi: {
-            fruits: 24,
-            vegetables: 525
-        },
-        drinks: {
-            beer: 164,
-            alcohol: 3857,
-            water: 41
-        },
-        bread: {
-            loaf: 582
-        },
-        sauce: {
-            ketchunes: 2
-        }
+
+    const {firestore} = useContext(Context);
+    const [food, loading] = useCollectionData(
+        firestore.collection('food')
+    )
+
+    if (loading) {
+        return 'LOADING';
     }
+
 
     return (
         <>
@@ -37,45 +30,47 @@ function Main() {
 
                         <div className={styles.eachIcon}>
                             <i className="fas fa-drumstick-bite"></i>
-                            <span>{food.meat.chicken}</span>
+                            <span>{sumBy(food,'meat')}</span>
                             <span>kg</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-fish"></i>
-                            <span>{food.meat.fish}</span>
+                            <span>{sumBy(food,'fish')}</span>
                             <span>kg</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-carrot"></i>
-                            <span>{food.frovoshi.vegetables}</span>
+                            <span>{sumBy(food,'vegetables')}</span>
                             <span>kg</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-apple-alt"></i>
-                            <span>{food.frovoshi.fruits}</span>
+                            <span>{sumBy(food,'fruits')}</span>
                             <span>kg</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-bread-slice"></i>
-                            <span>{food.bread.loaf}</span>
+                            <span>{sumBy(food,'bread')}</span>
                             <span>pc</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-beer"></i>
-                            <span>{food.drinks.beer}</span>
+                            <span>{sumBy(food,'beer')}</span>
                             <span>ltr</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-wine-bottle"></i>
-                            <span>{food.drinks.alcohol}</span>
+                            <span>{sumBy(food,'alcohol')}</span>
                             <span>ltr</span>
                         </div>
                         <div className={styles.eachIcon}>
                             <i className="fas fa-tint"></i>
-                            <span>{food.drinks.beer}</span>
+                            <span>{sumBy(food,'water')}</span>
                             <span>ltr</span>
+
                         </div>
 
+                        <FoodForm/>
 
 
 

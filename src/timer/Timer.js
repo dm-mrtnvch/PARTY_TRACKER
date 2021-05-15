@@ -1,7 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styles from './Timer.module.css'
+import Login from '../login/login';
 
-function Timer() {
+function Timer({user}) {
     const [timerDays, setTimerDays] = useState()
     const [timerHours, setTimerHours] = useState()
     const [timerMinutes, setTimerMinutes] = useState()
@@ -47,7 +48,9 @@ function Timer() {
                 <div>
                     {/*<span className='calendar'></span> */}
                     <h2>IT-KAMASUTRA PARTY STARTS IN:</h2>
-                    <button>register</button>
+                    {
+                        !user && <Login />
+                    }
                 </div>
                 <div>
                     <section>
