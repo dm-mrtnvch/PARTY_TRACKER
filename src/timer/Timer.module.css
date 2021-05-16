@@ -30,6 +30,11 @@ body {
     height: 100%;
 }
 
+.titleContainer{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 5%;
+}
 .timerContainer div:first-child {
     text-align: center;
 }

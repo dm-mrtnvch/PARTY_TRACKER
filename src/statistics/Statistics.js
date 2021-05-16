@@ -20,17 +20,20 @@ function Statistics() {
 
     return (
         <div className={styles.wrap}>
-            <div className={styles.statisticsContainer}>
-                <div className={styles.eachDoughnut}>
-                    <Doughnut data={ageStatistics(data)}/>
-                </div>
-                <div className={styles.eachDoughnut}>
-                    <Doughnut data={genderStatistics(data)}/>
-                </div>
-                <div className={styles.eachDoughnut}>
-                    <Doughnut data={levelStatistics(data)}/>
-                </div>
-            </div>
+            <Doughnut data={ageStatistics(data)}/>
+            <Doughnut data={genderStatistics(data)}/>
+            <Doughnut data={levelStatistics(data)}/>
+            {/*<div className={styles.statisticsContainer}>*/}
+            {/*    <div className={styles.eachDoughnut}>*/}
+            {/*        <Doughnut data={ageStatistics(data)}/>*/}
+            {/*    </div>*/}
+            {/*    <div className={styles.eachDoughnut}>*/}
+            {/*        <Doughnut data={genderStatistics(data)}/>*/}
+            {/*    </div>*/}
+            {/*    <div className={styles.eachDoughnut}>*/}
+            {/*        <Doughnut data={levelStatistics(data)}/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     )
 }

@@ -1,21 +1,24 @@
 .wrap {
+    padding-top: 10%;
+    padding-bottom: 5%;
     color: white;
     /*background-image: url("https://www.smstitan.ru/wp-content/uploads/2018/04/background-images-for-registration-page-12.jpg");*/
     background-size: cover;
-    min-height: 100vh;
+    min-height: 60vh;
     background-color: cadetblue;
     position: relative;
     margin:0 auto;
     text-align: center;
+    color: black;
 
 }
 
 .RegistrationContainer {
-    border: 3px solid red;
-    width: 20%;
-    height: 40%;
     align-items: center;
     display: inline-block;
-    background-color: white;
 
+}
+
+.button {
+    padding-top: 5%;
 }

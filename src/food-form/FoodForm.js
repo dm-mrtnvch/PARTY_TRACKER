@@ -4,19 +4,99 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 import {useDocument} from 'react-firebase-hooks/firestore';
 import Modal from '@material-ui/core/Modal';
 import {Button, makeStyles} from '@material-ui/core';
+import Input from '@material-ui/core/Input';
+import TextField from '@material-ui/core/TextField';
+import styles from './FoodForm.module.css'
 
 
-    const useStyles = makeStyles((theme) => ({
-        paper: {
-            position: 'absolute',
-            width: 400,
-            backgroundColor: theme.palette.background.paper,
-            border: '2px solid #000',
-            boxShadow: theme.shadows[5],
-            padding: theme.spacing(2, 4, 3),
-            margin: 'auto'
-        },
-    }));
+
+
+
+function rand() {
+    return Math.round(Math.random() * 20) - 10;
+}
+
+function getModalStyle() {
+    const top = 50 + rand();
+    const left = 50 + rand();
+
+    return {
+        top: `${top}%`,
+        left: `${left}%`,
+        transform: `translate(-${top}%, -${left}%)`,
+    };
+}
+
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        position: 'absolute',
+        width: 400,
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 10, 3,),
+        margin: '0 auto'
+
+    },
+}));
+
+
+export function SimpleModal() {
+    // const classes = useStyles();
+    // // getModalStyle is not a pure function, we roll the style only on the first render
+    // const [modalStyle] = React.useState(getModalStyle);
+    // const [open, setOpen] = React.useState(false);
+
+    // const handleOpen = () => {
+    //     setOpen(true);
+    // };
+    //
+    // const handleClose = () => {
+    //     setOpen(false);
+    // };
+
+    // const body = (
+    //     <div style={modalStyle} className={classes.paper}>
+    //         <h2 id="simple-modal-title">Text in a modal</h2>
+    //         <p id="simple-modal-description">
+    //             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+    //         </p>
+    //         <SimpleModal />
+    //     </div>
+    // );
+
+    // return (
+    //     <div>
+    //         <button type="button" onClick={handleOpen}>
+    //             Open Modal
+    //         </button>
+    //         <Modal
+    //             open={open}
+    //             onClose={handleClose}
+    //             // aria-labelledby="simple-modal-title"
+    //             // aria-describedby="simple-modal-description"
+    //         >
+    //             {body}c
+    //         </Modal>
+    //     </div>
+    // );
+}
+
+    // const useStyles = makeStyles((theme) => ({
+    //     paper: {
+    //         position: 'absolute',
+    //         width: 400,
+    //         backgroundColor: theme.palette.background.paper,
+    //         border: '2px solid #000',
+    //         boxShadow: theme.shadows[5],
+    //         padding: theme.spacing(2, 4, 3),
+    //         margin: 'auto',
+    //         alignItems: 'center',
+    //         display: 'center'
+    //     },
+    // }));
+
+
 
 
 
@@ -34,7 +114,10 @@ function FoodForm() {
     const [alcohol, setAlcohol] = useState();
     const [water, setWater] = useState();
 
+    // const classes = useStyles();
     const classes = useStyles();
+    // getModalStyle is not a pure function, we roll the style only on the first render
+    const [modalStyle] = React.useState(getModalStyle);
 
     const {auth, firestore} = useContext(Context);
     const [user] = useAuthState(auth);
@@ -61,29 +144,32 @@ function FoodForm() {
     }
 
     const renderForm = () => (
-
-
-
-
-    <div className={classes.paper}>
-            <input type="number" value={meat} onChange={(e) => setMeat(e.currentTarget.value)}/>
-            <input type="number" value={fish} onChange={(e) => setFish(e.currentTarget.value)}/>
-            <input type="number" value={vegetables} onChange={(e) => setVegetables(e.currentTarget.value)}/>
-            <input type="number" value={fruits} onChange={(e) => setFruits(e.currentTarget.value)}/>
-            <input type="number" value={bread} onChange={(e) => setBread(e.currentTarget.value)}/>
-            <input type="number" value={beer} onChange={(e) => setBeer(e.currentTarget.value)}/>
-            <input type="number" value={alcohol} onChange={(e) => setAlcohol(e.currentTarget.value)}/>
-            <input type="number" value={water} onChange={(e) => setWater(e.currentTarget.value)}/>
-            <button onClick={saveFood}>submit</button>
+    // <div className={classes.paper}>
+    <div style={modalStyle} className={classes.paper} id="simple-modal-title" >
+            <TextField id="outlined-basic" label="meat" variant="outlined" type="number" value={meat} onChange={(e) => setMeat(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="fish" variant="outlined" type="number" value={fish} onChange={(e) => setFish(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="carrot" variant="outlined" type="number" value={vegetables} onChange={(e) => setVegetables(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="vegetable" variant="outlined" type="number" value={fruits} onChange={(e) => setFruits(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="bread" variant="outlined" type="number" value={bread} onChange={(e) => setBread(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="beer" variant="outlined" type="number" value={beer} onChange={(e) => setBeer(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="alcohol" variant="outlined" type="number" value={alcohol} onChange={(e) => setAlcohol(e.currentTarget.value)}/>
+            <TextField id="outlined-basic" label="water" variant="outlined" type="number" value={water} onChange={(e) => setWater(e.currentTarget.value)}/>
+            <div className={styles.buttonWrap}>
+              <div className={styles.buttonContainer}>
+                  <Button variant={'contained'} color={'primary'} onClick={saveFood}>submit</Button>
+              </div>
+            </div>
         </div>
     );
 
     return (
         <>
-            <Button variant={'contained'} onClick={() => {
+            <Button variant={'contained'} color={'primary'} onClick={() => {
                 setModalOpen(true);
-            }}>Modal</Button>
+            }}>enter data</Button>
             <Modal
+                aria-labelledby="simple-modal-title"
+                // aria-describedby="simple-modal-description"
                 open={isModalOpen}
                 onClose={() => {
                     setModalOpen(false);

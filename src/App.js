@@ -23,10 +23,10 @@ function App() {
             {
                 user && (
                     <>
-
+                        <Registration/>
                         <Main/>
                         <Statistics/>
-                        <Registration/>
+
                     </>
                 )
             }

@@ -69,19 +69,9 @@ function Main() {
                             <span>ltr</span>
 
                         </div>
-
-                        <FoodForm/>
-
-
-
-
-
-
-
-
-
-
-
+                        <div>
+                            <FoodForm/>
+                        </div>
                     </section>
                 </div>
             </div>

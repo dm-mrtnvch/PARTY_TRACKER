@@ -1,26 +1,44 @@
 
+/*.wrap {*/
+/*    background-image: url("https://wallscloud.net/uploads/cache/309927772/uwp25253-1024x576-MM-90.jpeg");*/
+/*    background-size: cover;*/
+/*    display: block;*/
+/*    border: 3px solid darkmagenta;*/
+/*    color: white;*/
+/*    width: 100vw;*/
+/*    min-height: 100vh;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.statisticsContainer {*/
+/*    display: flex;*/
+/*    border: 3px solid green;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: nowrap;*/
+/*    justify-content: center;*/
+/*    align-content: space-between;*/
+/*    align-items: center;*/
+
+/*}*/
+
+/*.eachDoughnut {*/
+/*    padding: 20px;*/
+/*}*/
+
 .wrap {
-    background-image: url("https://photowalls.space/web/wallpapers/hills-and-sunset-dark-sky/5120x2880.jpg");
-    background-size: cover;
-    display: block;
-    border: 3px solid darkmagenta;
-    color: white;
-    width: 100vw;
-    min-height: 100vh;
+    max-width: 100vh;
+    min-width: 100vh;
+    border: 3px solid red;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .statisticsContainer {
-    display: flex;
-    border: 3px solid green;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: space-between;
-    align-items: center;
 
 }
 
-.eachDoughnut {
-    padding: 20px;
+.eachDoughnut{
+
 }

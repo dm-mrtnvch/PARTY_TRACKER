@@ -16,8 +16,8 @@ const Login = () => {
     }
 
     return (
-        <Button onClick={login} variant={'contained'}>
-            login with google
+        <Button onClick={login} variant={'contained'} color={'primary'}>
+            Sign in with Google
         </Button>
     );
 };

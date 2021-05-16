@@ -47,7 +47,7 @@ function Timer({user}) {
             <section className={styles.timerContainer}>
                 <div>
                     {/*<span className='calendar'></span> */}
-                    <h2>IT-KAMASUTRA PARTY STARTS IN:</h2>
+                    <h2 className={styles.titleContainer}>IT-KAMASUTRA PARTY STARTS IN:</h2>
                     {
                         !user && <Login />
                     }
@@ -74,6 +74,7 @@ function Timer({user}) {
                     </section>
                 </div>
             </section>
+
         </section>
     );
 }
