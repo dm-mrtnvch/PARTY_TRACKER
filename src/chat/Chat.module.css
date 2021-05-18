@@ -1,0 +1,21 @@
+.chatWrap {
+    padding-top: 20px;
+    background-image: url("https://www.stickerscape.co.uk/wp-content/uploads/003508GR-02-900x900.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+
+}
+
+.chatMessage {
+    border-radius: 15px;
+    background-color: lightblue;
+    max-width: 45%;
+}
+
+.name {
+    padding-left: 10px;
+}
+
+.message {
+    word-break: break-word;
+}

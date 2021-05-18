@@ -1,11 +1,9 @@
 import React, {useContext, useState} from 'react';
 import styles from './Registration.module.css';
-import IconButton from '@material-ui/core/IconButton';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
-import Input from '@material-ui/core/Input';
 import {makeStyles} from '@material-ui/core/styles';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import {Context} from '../index';
@@ -47,9 +45,9 @@ function Registration() {
 
     const classes = useStyles();
 
-    const [age, setAge] = useState('18');
-    const [gender, setGender] = useState('man');
-    const [level, setLevel] = useState('monday');
+    const [age, setAge] = useState('');
+    const [gender, setGender] = useState('');
+    const [level, setLevel] = useState('');
 
     const onChangeAgeHandler = (e) => {
         setAge(e.target.value);

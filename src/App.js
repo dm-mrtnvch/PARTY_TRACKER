@@ -1,16 +1,13 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
-import styles from './App.css';
-import Header from './header/Header';
+import {BrowserRouter} from 'react-router-dom';
 import Main from './main/Main';
 import Timer from './timer/Timer';
 import Registration from './registration/Registration';
 import Statistics from './statistics/Statistics';
-import Login from '../src/login/login';
 import {Context} from './index';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import Loader from './loader/Loader';
-import FoodForm from './food-form/FoodForm';
-
+import Chat from './chat/Chat';
 
 function App() {
 
@@ -23,9 +20,12 @@ function App() {
             {
                 user && (
                     <>
-                        <Registration/>
-                        <Main/>
-                        <Statistics/>
+                        <BrowserRouter>
+                            <Registration/>
+                            <Main/>
+                            <Statistics/>
+                            <Chat/>
+                        </BrowserRouter>
 
                     </>
                 )
@@ -34,7 +34,6 @@ function App() {
     );
 
     return isLoading ? <Loader/> : renderPage();
-
 }
 
 export default App;

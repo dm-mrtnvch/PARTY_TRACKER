@@ -1,6 +1,4 @@
 .wrap {
-    /*background-image: url('https://img.tpt.cloud/nextavenue/uploads/2018/07/The-Top-6-Healthy-Foods-to-Put-In-Your-Shopping-Cart_142142188.inside.1200x776.jpg');*/
-    /*background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM-FXXHcgnYaRjZ2ldlvWSJvwcL32c4fJZQQ&usqp=CAU');*/
     background-image: url('https://www.pnas.org/content/116/37/18152/F1.large.jpg');
     background-color: rgba(0, 0, 0, 0.5);
     background-position: center;
@@ -10,7 +8,6 @@
     min-height: 100vh;
 
 }
-
 
 .mainContainer {
     background-color: rgba(0, 0, 0, 0.5);
@@ -33,7 +30,6 @@
 .icons {
     color: white;
     font-size: 2.5em;
-    /*border: 3px solid red;*/
     text-align: center;
 }
 
@@ -41,18 +37,14 @@
     display: inline-block;
     width: 2.5em;
     height: 2.5em;
-    /*padding: 20px;*/
-    /*margin: 30px;*/
     border: 3px solid white;
     border-radius: 50% 50%;
     text-align: center;
     line-height: 2.5em;
 }
 
-
 .eachIcon {
     margin: 30px;
-    /*border: 3px solid green;*/
     display: inline-flex;
     flex-direction: column;
     flex-wrap: nowrap;
